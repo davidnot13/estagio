@@ -91,11 +91,11 @@ class mainwindow(QWidget):
         self.input_password.clear()
         QMessageBox.information(self, "Sucesso", f"Bem vindo '{username}'!")
         try:
-            self.janela_principal = MainWindow()
+            self.janela_principal= MainWindow()
             self.janela_principal.show()
             self.close()
         except Exception as e:
-            QMessageBox.critical(self, "Erro", "Algo de errado não tá certo")
+            QMessageBox.critical(self, "Erro", f"Algo de errado não tá certo: {e}")
     def processar_registo(self):
         username2 = self.input_username.text().strip()
         password2 = self.input_password.text().strip()
